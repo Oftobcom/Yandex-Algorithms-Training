@@ -4,35 +4,26 @@ t1 = tuple(map(int, input().split()))
 #print(t1)
 
 win_max = max(t1)
-#print("winner",win)
+win_idx = t1.index(win_max)
+print("win_max",win_max)
+print("win_idx",win_idx)
 
-winners = []
 lst = []
 i = 0
 for x in t1:
-    if i > 0:
+    if (i-1) > win_idx:
         if x_prev%5 == 0 and x_prev%2 == 1 and x < x_prev:
             lst.append(i-1)
     x_prev = x
-    if x == win_max:
-        winners.append(i)
     i += 1
 
-vasya = []
-for i in lst:
-    for win in winners:
-        if i > win:
-            vasya.append(i)
-            break
+print("lst",lst)
 
-#print(vasya)
-#print("Vasya index",vasya)
-
-if len(vasya) == 0:
+if len(lst) == 0:
     result = 0
 else:
-    distanceVasya = t1[vasya[0]]
-    for i in vasya[1::]:
+    distanceVasya = t1[lst[0]]
+    for i in lst[1::]:
         x = t1[i]
         if distanceVasya < x:
             distanceVasya = x
