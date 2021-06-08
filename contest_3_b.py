@@ -1,0 +1,5 @@
+set1 = set(map(int, input().split()))
+set2 = set(map(int, input().split()))
+lst = sorted(list(set1 & set2))
+result = ' '.join([str(elem) for elem in lst])
+print(result)
