@@ -5,8 +5,8 @@ t1 = tuple(map(int, input().split()))
 
 win_max = max(t1)
 win_idx = t1.index(win_max)
-print("win_max",win_max)
-print("win_idx",win_idx)
+##print("win_max",win_max)
+##print("win_idx",win_idx)
 
 lst = []
 i = 0
@@ -17,7 +17,7 @@ for x in t1:
     x_prev = x
     i += 1
 
-print("lst",lst)
+##print("lst",lst)
 
 if len(lst) == 0:
     result = 0
